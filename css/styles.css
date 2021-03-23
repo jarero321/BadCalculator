@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --negro-fondo: #242424;
+  --negro-calculadora: #0f0f0f;
+  --negro-degradado1: #131313;
+  --negro-degradado2: #171717;
+  --negro-degradado3: #212121;
+  --color-principal: #4a234f;
+  --color-simbolos: #ca9d69;
+  --color-blanco: #ffffff;
+  --color-aurea: #ffff0c;
+  --sombra-ojo: #f2f2f2;
+  --color-hover: #003b3b;
+}
+body {
+  width: 100%;
+  height: 85vh;
+  background-image: url(../img/Bad\ bunny\ Calculator@2x.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.calculator {
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--color-principal);
+  margin: 0 auto;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  box-shadow: 0px 3px 10px var(--color-principal);
+}
+.screen {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.text {
+  color: var(--color-blanco);
+  font-size: 30px;
+  position: fixed;
+}
+.container-buttons {
+  width: 100%;
+  height: 71.4285%;
+}
+.buttons {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas:
+    "clear divison multiplicacion borrar"
+    "siete ocho nueve menos"
+    "cuatro cinco seis mas"
+    "uno dos tres igual"
+    "cero punto porcentaje igual";
+}
+/* lista numero calculadora  */
+.buttons button {
+  margin: 0;
+  padding: 0;
+  background-color: var(--negro-calculadora);
+  border: none;
+  box-shadow: 0px 0px 3px var(--color-principal);
+  max-width: 100%;
+  max-height: 100%;
+  color: var(--color-blanco);
+  font-size: 35px;
+}
+.buttons button:hover {
+  background-color: var(--color-hover);
+}
+/* icono igual */
+.igual {
+  grid-area: igual;
+  background-image: url("../img/iconos/Icon\ awesome-equals.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.buttons button:nth-child(1) {
+  grid-area: clear;
+}
+/* icono division  */
+.buttons button:nth-child(2) {
+  background-image: url("../img/iconos/porcentaje.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  grid-area: divison;
+}
+/* icono multiplicacion */
+.buttons button:nth-child(3) {
+  grid-area: multiplicacion;
+  background-image: url("../img/iconos/Icon\ metro-cross.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* icono borrar */
+.buttons button:nth-child(4) {
+  grid-area: borrar;
+  background-image: url("../img/iconos/Icon\ feather-delete.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.buttons button:nth-child(5) {
+  grid-area: siete;
+}
+.buttons button:nth-child(6) {
+  grid-area: ocho;
+}
+.buttons button:nth-child(7) {
+  grid-area: nueve;
+}
+/* icono menos */
+.buttons button:nth-child(8) {
+  background-image: url("../img/iconos/Icon\ awesome-minus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  grid-area: menos;
+}
+.buttons button:nth-child(9) {
+  grid-area: cuatro;
+}
+.buttons button:nth-child(10) {
+  grid-area: cinco;
+}
+.buttons button:nth-child(11) {
+  grid-area: seis;
+}
+/* Icono mas */
+.buttons button:nth-child(12) {
+  background-image: url("../img/iconos/Icon\ open-plus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  grid-area: mas;
+}
+.buttons button:nth-child(13) {
+  grid-area: uno;
+}
+.buttons button:nth-child(14) {
+  grid-area: dos;
+}
+.buttons button:nth-child(15) {
+  grid-area: tres;
+}
+/* Icono porcentaje */
+.buttons button:nth-child(17) {
+  grid-area: porcentaje;
+  background-image: url("../img/iconos/Icon\ awesome-percent.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.buttons button:nth-child(18) {
+  grid-area: cero;
+}
+.buttons button:nth-child(19) {
+  grid-area: punto;
+}
+/* iconos calculadora */
+
+/* eye */
+.ojo {
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  background-color: var(--color-blanco);
+  position: absolute;
+  box-shadow: 0px 0px 10px var(--negro-calculadora);
+  border: none;
+  position: absolute;
+  left: 40%;
+  top: 10%;
+}
+.ojo:before {
+  content: "";
+  width: 62px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: none;
+  border: solid 3px var(--color-aurea);
+  position: absolute;
+  bottom: 110%;
+  right: 0%;
+}
+
+.bolita {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-color: var(--negro-calculadora);
+  border-radius: 50%;
+  top: 33%;
+  left: 0px;
+  position: absolute;
+}
+.sombra {
+  content: "";
+  width: 9px;
+  height: 5px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  top: 33%;
+  left: 0px;
+  position: absolute;
+}
+@media (min-width: 765px) {
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  /* estructura de la calculadora */
+  body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/Bad\ bunny\ Calculator@2x.png);
+    background-position: center;
+    background-size: cover;
+  }
+  .calculator {
+    width: 40vw;
+    height: 70vh;
+  }
+  .screen {
+    width: 100%;
+    height: 35%;
+  }
+  .text {
+    display: block;
+    color: var(--color-blanco);
+    font-size: 40px;
+    position: fixed;
+  }
+
+  .container-buttons {
+    width: 100%;
+    height: 71.4285%;
+  }
+  .buttons {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas:
+      "clear divison multiplicacion borrar"
+      "siete ocho nueve menos"
+      "cuatro cinco seis mas"
+      "uno dos tres igual"
+      "cero punto porcentaje igual";
+  }
+  /* lista numero calculadora  */
+  .buttons button {
+    margin: 0;
+    padding: 0;
+    background-color: var(--negro-calculadora);
+    border: none;
+    box-shadow: 0px 0px 3px var(--color-principal);
+    max-width: 100%;
+    max-height: 100%;
+    color: var(--color-blanco);
+    font-size: 35px;
+  }
+  .buttons button:hover {
+    background-color: var(--color-hover);
+  }
+  /* icono igual */
+  .igual {
+    grid-area: igual;
+    background-image: url("../img/iconos/Icon\ awesome-equals.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .buttons button:nth-child(1) {
+    grid-area: clear;
+  }
+  /* icono division  */
+  .buttons button:nth-child(2) {
+    background-image: url("../img/iconos/porcentaje.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-area: divison;
+  }
+  /* icono multiplicacion */
+  .buttons button:nth-child(3) {
+    grid-area: multiplicacion;
+    background-image: url("../img/iconos/Icon\ metro-cross.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  /* icono borrar */
+  .buttons button:nth-child(4) {
+    grid-area: borrar;
+    background-image: url("../img/iconos/Icon\ feather-delete.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .buttons button:nth-child(5) {
+    grid-area: siete;
+  }
+  .buttons button:nth-child(6) {
+    grid-area: ocho;
+  }
+  .buttons button:nth-child(7) {
+    grid-area: nueve;
+  }
+  /* icono menos */
+  .buttons button:nth-child(8) {
+    background-image: url("../img/iconos/Icon\ awesome-minus.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-area: menos;
+  }
+  .buttons button:nth-child(9) {
+    grid-area: cuatro;
+  }
+  .buttons button:nth-child(10) {
+    grid-area: cinco;
+  }
+  .buttons button:nth-child(11) {
+    grid-area: seis;
+  }
+  /* Icono mas */
+  .buttons button:nth-child(12) {
+    background-image: url("../img/iconos/Icon\ open-plus.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-area: mas;
+  }
+  .buttons button:nth-child(13) {
+    grid-area: uno;
+  }
+  .buttons button:nth-child(14) {
+    grid-area: dos;
+  }
+  .buttons button:nth-child(15) {
+    grid-area: tres;
+  }
+  /* Icono porcentaje */
+  .buttons button:nth-child(17) {
+    grid-area: porcentaje;
+    background-image: url("../img/iconos/Icon\ awesome-percent.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .buttons button:nth-child(18) {
+    grid-area: cero;
+  }
+  .buttons button:nth-child(19) {
+    grid-area: punto;
+  }
+  /* iconos calculadora */
+
+  /* eye */
+  .ojo {
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    background-color: var(--color-blanco);
+    position: absolute;
+    box-shadow: 0px 0px 10px var(--negro-calculadora);
+    border: none;
+    position: absolute;
+    left: 45%;
+    top: 10%;
+  }
+  .ojo:before {
+    content: "";
+    width: 62px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: none;
+    border: solid 3px var(--color-aurea);
+    position: absolute;
+    bottom: 110%;
+    right: 0%;
+  }
+
+  .bolita {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: var(--negro-calculadora);
+    border-radius: 50%;
+    top: 33%;
+    left: 0px;
+    position: absolute;
+  }
+  .sombra {
+    content: "";
+    width: 9px;
+    height: 5px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    top: 33%;
+    left: 0px;
+    position: absolute;
+  }
+}
+@media (min-width: 1300px){
+  .calculator {
+    width:25%;
+  }
+  .ojo{
+    left: 48%;
+  }
+}
